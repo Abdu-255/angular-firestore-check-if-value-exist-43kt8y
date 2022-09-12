@@ -1,0 +1,7 @@
+<h3> This is the user Component</h3>
+<ul>
+  <li *ngFor="let user of users | async">
+    {{ user.email }} | {{ user.id }} | {{ user.gym }} |
+    <a href="#" (click)="updateUserGym(user.id)">Set Gym on User</a>
+  </li>
+</ul>

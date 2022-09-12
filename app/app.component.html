@@ -1,0 +1,15 @@
+<h4>Enter email to see if it exist in the system</h4>
+<form [formGroup]="userInviteForm" (ngSubmit)="checkeUserInvite(userInviteForm.value)">
+	<input [formControl]="userInviteForm.controls['email']" placeholder="Email address" type="email">
+	<input [formControl]="userInviteForm.controls['gym']" placeholder="Gym" type="text">
+	<button type="submit">Submit</button>
+</form>
+
+<p>Email will be listed here if it exist:</p>
+<li *ngFor="let user of users | async">
+	{{user.email}}
+</li>
+
+<hr>
+
+<app-users></app-users>
